@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/stile.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    
+	
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>
+<head>
+	<title> Cart </title>
+</head>
+
+<body>
+	<h1>Cart</h1>
+	<h2>Photos in your cart </h2>
+	
+		<ul>
+		<div class = "photosInCart">
+			<li th:each = "photoInCart : ${photosInCart}">
+				
+				<span th:text = "${photoInCart.nome}">PhotoName</span>
+				
+				<span class = "price" th:text = "${photoInCart.prezzo}">PrezzoFotografia</span>
+				
+					<a th:href="@{'/removePhoto/' + ${photoInCart.id}}">
+				<button type="button" th:text="Remove">Rimuovi</button>
+			</a>
+			</li>
+		</div>
+		</ul>
+		
+		<div class = "request">
+		<a th:href = "addRequest" 
+			th:text = "request">Richiesta</a>
+		</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/stile.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    
+		
+<body>
+<form th:action = "@{/photo}" method = "POST" th:object = "${photo}">
+	<h1>Insert new photo datas</h1>
+	<table>
+		<tr>
+			<td>Name: </td>
+			<td><input type = "text" th:field = "*{nome}"/></td>
+			<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>		
+		</tr>
+		<tr>
+			<td>Description: </td>
+			<td><input type = "text" th:field = "*{descrizione}"/></td>
+		</tr>
+		<tr>
+			<td>Price: </td>
+			<td><input type = "text" th:field = "*{prezzo}"/></td>
+		</tr>
+		<tr>
+			<td>Url: </td>
+			<td><input type = "text" th:field = "*{url}"/></td>
+		</tr>
+		
+		<tr>
+			<td><button type = "submit">Invio</button></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

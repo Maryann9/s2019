@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+		
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografo.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>   <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>	
+	
+<body>
+<form th:action = "@{/request}" method = "POST" th:object = "${customer}">
+	<h1>Submit your request</h1>
+	<div>
+		<h4>Insert your datas</h4>
+	</div>
+	<table>
+		<tr>
+			<td>Name: </td>
+			<td><input type = "text" th:field = "*{nome}"/></td>
+			<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>					
+		</tr>
+		<tr>
+			<td>Surname: </td>
+			<td><input type = "text" th:field = "*{cognome}"/></td>
+			<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></td>		
+			
+		</tr>
+		<tr>
+			<td>e-mail: </td>
+			<td><input type = "text" th:field = "*{email}"/></td>
+			<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>		
+		</tr>
+		<tr>
+			<td>Address: </td>
+			<td><input type = "text" th:field = "*{indirizzo}"/></td>
+			<td th:if="${#fields.hasErrors('indirizzo')}" th:errors="*{indirizzo}"></td>		
+		</tr>	
+		<tr>
+			<td><button type = "submit">Invio</button></td>
+		</tr>
+		
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/stile.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>	
+<body>
+
+	<div>
+		<h4>Selected Album</h4>
+		<div>
+		Name: <span th:text="${selectedAlbum.nome}">Inghilterra</span>
+		</div>
+	
+		<a th:href = "@{/addPhoto}"
+			th:text = "Select">Select</a>
+
+</div>
+</body>
+</html>	

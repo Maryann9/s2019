@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografo.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>
+    
+<body>
+<h1>Photographers</h1>
+<div>
+<ul>
+	<li th:each = "photographers : ${photographers}">
+		<div class = "photographers">
+
+		<a th:href = "@{'/photographer' + '/' + ${photographer.id}}" 
+		th:text = "${photographer.nome}">PhotographerName</a>
+		
+		<a th:href = "@{'/photographer' + '/' + ${photographer.id}}" 
+		th:text = "${photographer.cognome}">PhotographerSurname</a>
+		</div>
+	</li>
+</ul>
+</div>
+
+		<div class = linkHomepage>
+			<a th:href="@{/}"
+			th:text="Homepage">Homepage</a>
+		</div>
+</body>
+</html>

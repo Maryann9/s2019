@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	<head>
+		<title>SILPH SPA</title>
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>
+    
+	</head>
+	
+
+   
+	<body><h1>SILPH SPA</h1>
+
+	<div class="links"><div>
+			<a th:href="@{/getGallery}">
+			<img src = "/images/gallery.jpg"
+			th:src="@{/images/gallery.jpg}"/></a>
+			<a th:href="@{/getPhotographers}">			
+			<img src = "/images/photographer.jpg.png"
+			th:src="@{/images/photographer.png}"/></a>
+			<a th:href="@{/getAlbum}">			
+			<img src = "/images/album.png"
+			th:src="@{/images/album.png}"/></a>
+		</div>
+
+		<div>
+		<a th:href="@{/findPhotographer}">Find a photographer</a>
+		</div>
+		<div>
+		<a th:href="@{/findAlbum}">Find an album</a>
+		</div>		
+		<div>
+		<a th:href="@{/findPhoto}">Find a photo</a>
+		</div>
+		<div>
+		Are you an executive? <a th:href="@{/login}">Login</a>
+		</div>
+	</div>
+	
+			   
+	<div class = "welcome">
+	<center>
+	<img src = "/images/welcome.jpg" th:src="@{/images/welcome.jpg}"/>
+	</center>
+	</div>
+	
+	</body>
+</html>

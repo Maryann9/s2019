@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografo.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>	
+<body>
+	<div>
+		<h4>Selected Photographer</h4>
+		<div>
+		Name: <span th:text="${selectedPhotographer.nome}">Steve</span>
+		</div>
+		<div>
+		Surname: <span th:text="${selectedPhotographer.cognome}">McCurry</span>
+		</div>
+		<div>
+		Date of birth: <span th:text="${selectedPhotographer.annoDiNascita}">1950</span>
+		</div>
+		
+		<a th:href = "@{/addAlbum}"
+			th:text = "Select">Seleziona</a>
+
+</div>
+</body>
+</html>	

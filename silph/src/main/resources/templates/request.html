@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tyhmeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+		
+	<link rel="stylesheet" type="text/css" th:href="@{/css/stile.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+     <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>	
+    
+    <head>
+<meta charset="ISO-8859-1">
+<title>Request</title>
+</head>
+<body>
+	<h1>Request sended:</h1>
+	<h3>Informations:</h3>
+		<div>
+		<b>Name: </b><span th:text="${customer.nome}">Geralt</span>
+		</div>
+		<div>
+		<b>Surname: </b><span th:text="${customer.cognome}">Skywalker</span>
+		</div>
+		<div>
+		<b>Address: </b><span th:text="${customer.indirizzo}">baker street</span>
+		</div>
+		<div>
+		<b>e-mail: </b><span th:text="${customer.email}">Geralt.Skywalker@gmail.com</span>
+		</div>				
+	<div class = "image">
+	<h3>Chosen photos:</h3>
+		<ul>
+			<span class = "image" th:each = "photoInCart : ${photoInCart}">
+				<img src = "${photoInCart.url}" th:src="@{${photoInCart.url}}"
+				th:title = "${photoInCart.nome}"/>
+			</span>
+		</ul>
+	</div>
+			<div class = linkHomepage>
+			<a th:href="@{/}"
+			th:text="Homepage">Homepage</a>
+		</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografia.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    <script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+    </script>	
+
+<title>Photo</title>
+<body>
+<div class = "photoImp">
+	<h1>Photo</h1>
+	<div class = "imp">
+	<div>					
+		<b>Title:</b>
+		<span th:text = "${photo.nome}">PhotoName</span>
+	</div>		
+	<div>					
+		<b>Description:</b>
+		<span th:text = "${photo.descrizione}">PhotoDescription</span>
+	</div>
+	<div>			
+		<b>Price:</b>	
+		<span th:text = "${photo.prezzo}">PhotoPrice</span>
+	</div>
+	</div>
+
+	<div>
+	<a class = "image" th:href = "@{${photo.id}}">
+	<img src = "${photo.url}" th:src="@{${photo.url}}"
+		th:title = "${photo.nome}"/></a>
+	</div>
+			
+	<div class = "selectPhoto">
+		<a th:href = "@{'/addPhotoToCart/'+${photo.id}}">
+			<button type="button">Add to cart</button></a>
+	</div>
+	
+	<div>
+		<a th:href = "@{'/addPhotoToCart/'+${photo.id}}">Go back to gallery</a>
+	</div>
+	
+</div>
+</body>
+</html>

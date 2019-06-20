@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/stile.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    
+	    <body>
+	<div>
+		<h4>Album</h4>
+		<div>
+		Nome: <span th:text="${album.nome}">Album Sardegna</span>
+		</div>
+		
+		<h4>These are the photo of the current album</h4>
+		<div>
+		<ul>
+			<span th:each = "photos : ${album.photos}">
+		
+				<a class = "image" th:href = "@{${photo.id}}">
+				<img src = "${photo.url}" th:src="@{${photo.url}}"
+					th:title = "${photo.nome}"/></a>
+				
+			</span>
+		</ul>
+		</div>
+	</div>
+</body>
+</html>

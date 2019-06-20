@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fotografo.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    
+<body>
+<h4>Welcome</h4>
+<div class = "executiveOperations">
+	<div>
+		<span><a th:href="@{/addPhotographer}">Add a new Photographer</a></span>
+	</div>
+	<div>
+		<span><a th:href="@{/selectPhotographer}"></a></span>
+	</div>
+	<div>
+		<span><a th:href="@{/selectAlbum}">Add a new photo</a></span>
+	</div>
+	<div>
+		<span><a th:href="@{/receivedRequests}">see requests</a></span>
+	</div>
+</div>
+</body>
+</html>

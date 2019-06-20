@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/stile.css}"/>
+    <link rel="stylesheet" type="text/css" href="@{/css/lightbox.min.css}"/>
+    
+	
+	
+<body>
+	<div>
+		<h4>Photographer</h4>
+		<div>
+		Name: <span th:text="${photographer.nome}">Steve</span>
+		</div>
+		<div>
+		Surname: <span th:text="${photographer.cognome}">McCurry</span>
+		</div>
+		<div>
+		Day of birth: <span th:text="${photographer.annoDiNascita}">1950</span>
+		</div>
+		
+		
+		<h4>Here's the album of this photographer</h4>
+		<div>
+		<ul>
+			<li th:each = "album : ${photographer.album}">
+		
+				<a th:href = "@{'/album' + '/' + ${album.id}}" 
+					th:text = "${album.nome}">AlbumName</a>
+				
+			</li>
+		</ul>
+		</div>
+	</div>
+</body>
+</html>
